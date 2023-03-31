@@ -1,8 +1,17 @@
 server:
   port: 8888
 spring:
+  config:
+    import: file:env.yaml
   application:
     name: config-server
-  profiles:
-    active:
-      - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/matheusslr/spring-config-server
+          username: matheusslr
+          password: ${GIT_PASSWORD}
+          default-label: main
+          search-paths:
+            - 'greeting-service*'
