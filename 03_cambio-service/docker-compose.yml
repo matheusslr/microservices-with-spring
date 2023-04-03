@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.0.29
+    container_name: db-cambio-service
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - cambio_service:/var/lib/mysql
+
+volumes:
+  cambio_service:
