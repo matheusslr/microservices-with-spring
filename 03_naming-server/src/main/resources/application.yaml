@@ -1,0 +1,9 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: naming-server
+eureka:
+  client:
+    register-with-eureka: false   # desabilita o auto registramento de uma
+    fetch-registry: false         # ou varias instancias do eureka (nao usar em producao)

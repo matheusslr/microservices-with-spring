@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.0.29
+    container_name: db-book-service
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - book-service:/var/lib/mysql
+
+volumes:
+  book-service:
