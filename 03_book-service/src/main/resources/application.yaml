@@ -42,3 +42,6 @@ spring:
       schemas: book_service
       user: ${DB_USERNAME}
       password: ${DB_PASSWORD}
+springdoc:
+  api-docs:
+    path: book-service/v3/api-docs
