@@ -25,6 +25,10 @@ spring:
     schemas: cambio_service
     user: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+management:
+  tracing:
+    sampling:
+      probability: 1 # Em produção usar entre 5-10%
 springdoc:
   api-docs:
     path: cambio-service/v3/api-docs
