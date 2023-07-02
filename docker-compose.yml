@@ -31,10 +31,16 @@ services:
     restart: always
     environment:
       TZ: America/Sao_Paulo
-      MYSQL_DATABASE: book-service
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: book_service
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_TCP_PORT: 3307
     ports:
       - "3307:3306"
+    expose:
+      - 3307
     volumes:
       - book_service:/var/lib/mysql
     networks:
@@ -90,8 +96,8 @@ services:
       EUREKA.CLIENT.SERVICE-URL.DEFAULTZONE: http://discovery-server:8761/eureka
       SPRING.ZIPKIN.BASEURL: http://zipkin:9411/
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin:9411/api/v2/spans
-      SPRING.DATASOURCE.URL: jdbc:mysql://db-book:3307/book-service?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
-      SPRING.FLYWAY.URL: jdbc:mysql://db-book:3307/book-service?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+      SPRING.DATASOURCE.URL: jdbc:mysql://db-book:3307/book_service?useSSL=false&createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+      SPRING.FLYWAY.URL: jdbc:mysql://db-book:3307/book_service?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
       SPRING.FLYWAY.PASSWORD: root
     depends_on:
       - discovery-server
