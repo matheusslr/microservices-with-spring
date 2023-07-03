@@ -1,9 +1,20 @@
 version: "3.9"
 services:
   zipkin:
-    image: openzipkin/zipkin:latest
+    image: openzipkin/zipkin:2.23.2
     ports:
       - "9411:9411"
+    depends_on:
+      - rabbit-mq
+    networks:
+      - microservices-network
+  rabbit-mq:
+    image: rabbitmq:3.9.29-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBIT_URI: amqp://guest:guest@rabbit-mq:5672
     networks:
       - microservices-network
 
@@ -62,9 +73,13 @@ services:
       SPRING.ZIPKIN.BASEURL: http://zipkin:9411/
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin:9411/api/v2/spans
       EUREKA.CLIENT.SERVICE-URL.DEFAULTZONE: http://discovery-server:8761/eureka
+      RABBIT_URI: amqp://guest:guest@rabbit-mq:5672
+      SPRING_RABBITMQ_HOST: rabbit-mq
+      SPRING_ZIPKIN_SENDER_TYPE: rabbit
     command: mvn spring-boot:run
     depends_on:
       - discovery-server
+      - rabbit-mq
     networks:
       - microservices-network
 
@@ -80,9 +95,13 @@ services:
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin:9411/api/v2/spans
       SPRING.DATASOURCE.URL: jdbc:mysql://db-cambio:3306/cambio_service?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
       SPRING.FLYWAY.URL: jdbc:mysql://db-cambio:3306/
+      RABBIT_URI: amqp://guest:guest@rabbit-mq:5672
+      SPRING_RABBITMQ_HOST: rabbit-mq
+      SPRING_ZIPKIN_SENDER_TYPE: rabbit
     depends_on:
       - discovery-server
       - db-cambio
+      - rabbit-mq
     networks:
       - microservices-network
 
@@ -99,10 +118,14 @@ services:
       SPRING.DATASOURCE.URL: jdbc:mysql://db-book:3307/book_service?useSSL=false&createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
       SPRING.FLYWAY.URL: jdbc:mysql://db-book:3307/book_service?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
       SPRING.FLYWAY.PASSWORD: root
+      RABBIT_URI: amqp://guest:guest@rabbit-mq:5672
+      SPRING_RABBITMQ_HOST: rabbit-mq
+      SPRING_ZIPKIN_SENDER_TYPE: rabbit
     depends_on:
       - discovery-server
       - db-book
       - cambio-service
+      - rabbit-mq
     networks:
       - microservices-network
 
