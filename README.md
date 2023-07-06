@@ -1,4 +1,4 @@
-# Microservices with Spring Cloud, Spring Boot and Docker
+# microservices-with-spring-cloud-spring-boot-and-docker
 
 <!-- Shields Exemplo, existem N diferentes shield em https://shields.io/ -->
 ![GitHub last commit](https://img.shields.io/github/last-commit/matheusslr/microservices-with-spring)
@@ -53,36 +53,34 @@ Enter the folders in the following pattern `03_*` and run the command in each on
 mvn spring-boot:run
 ```
 
-or run:
-
-
-
-## Estrutura de Pastas
-
-A estrutura de pastas do projeto é organizada da seguinte maneira:
-
-```text
-/
-|-- pasta1/
-|   |-- arquivo1
-|   |-- arquivo2
-|-- pasta2/
-|   |-- arquivo3
-|   |-- arquivo4
-|-- ...
+**Alternatively, you can run the project with:**
+```bash
+docker compose up
 ```
 
-<!-- Outra forma de descrever é em texto corrido -->
+## Folder Structure
 
-### Disposição e estilos
+The project folder structure is organized as follows:
 
-* `pasta1`: Dados estruturados para serem reusados de maneira X. Por exemplo Y
+```text
+|-- 03_book_service/
+|-- |-- src/
+|   |   |-- main/
+|   |   |   |-- com/matheusslr/bookservice
+|   |   |   |   |-- config
+|   |   |   |   |-- controller
+|   |   |   |   |-- model
+|   |   |   |   |-- proxy
+|   |   |   |   |-- repository
+|   |   |   |   |-- response
+|   |   |   |   |-- service
+|   |-- resources
+|   |   |-- db/migration
+|   |   |-- application.yaml
+|-- test/
+|   |-- ...
+```
 
-* `pasta2`: Componentes que podem ser reusados entre as páginas. Por exemplo Z
+## Back to the top
 
-* `...`: Outras informações
-
-## Voltar ao topo
-
-[⬆ Voltar ao topo](#título)
-
+[⬆ Back to the top](#microservices-with-spring-cloud-spring-boot-and-docker)
