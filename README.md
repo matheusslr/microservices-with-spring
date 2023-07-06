@@ -10,32 +10,30 @@
 
 > Case study of a simple currency converter using a microservices environment approach in the Spring ecosystem
 
-## Pré-requisitos
+## Pre-requisites
 
-Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas:
+Before running the project, make sure you have the following dependencies installed:
 
-- Antes de começar, verifique se você possui o `Tecnologia X` instalado em sua máquina. Se não tiver, você pode baixar o `Tecnologia X` [aqui](https://exemplo_de_link.com).
+- `Java 17`. If not, you can download the `Java 17` [here](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
+- `Apache Maven 3.9.2`. If not, you can download the `Apache Maven 3.9.2` [here](https://maven.apache.org/docs/3.9.2/release-notes.html).
+- `Docker`. If not, you can download the `Docker` [here](https://www.docker.com/).
 
-## Como executar o projeto
+## How to run
 
-Siga as etapas abaixo para executar o projeto em sua máquina local:
+Follow the steps below to run the project on your local machine:
 
-Execute os seguintes comandos a partir da pasta raiz do projeto:
+Run the following commands from the root folder of the project:
 
-<!-- Aqui é tudo exemplo, só trocar -->
-
-### Clone este repositório
+### Clone this repository
 
 ```bash
-git clone <link-do-repositorio>
+git clone https://github.com/matheusslr/microservices-with-spring
 ```
 
-Este link pode ser encontrado no botão verde acima `Code`.
-
-### Instale as dependências
+### Install the dependencies
 
 ```bash
-npm install
+mvn install
 ```
 
 ### Defina as variáveis de ambiente
