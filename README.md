@@ -31,20 +31,31 @@ git clone https://github.com/matheusslr/microservices-with-spring
 ```
 
 ### Install the dependencies
-
+Enter the folders in the following pattern `03_*` and run the command in each one: 
 ```bash
-mvn install
+mvn dependency:resolve
 ```
 
-### Defina as variáveis de ambiente
+Alternatively, you can use the following scripts to download the project dependencies:
 
-Descrição de como definir as variáveis de ambiente
-
-### Execute o Projeto
-
+Linux:
 ```bash
-npm run dev
+.\build.sh
 ```
+Windows:
+```bash
+.\build.bat
+```
+
+### Run the Project
+Enter the folders in the following pattern `03_*` and run the command in each one:
+```bash
+mvn spring-boot:run
+```
+
+or run:
+
+
 
 ## Estrutura de Pastas
 
