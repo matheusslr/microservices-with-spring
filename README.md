@@ -5,6 +5,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/matheusslr/microservices-with-spring)
 ![Github repo size](https://img.shields.io/github/repo-size/matheusslr/microservices-with-spring)
 ![Github stars](https://img.shields.io/github/stars/matheusslr/microservices-with-spring?style=social)
+[![Docker](https://github.com/matheusslr/microservices-with-spring/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/matheusslr/microservices-with-spring/actions/workflows/docker-publish.yml)
 
 ![Capa do Projeto](assets/img/structure_microservices.png)
 
