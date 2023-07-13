@@ -20,3 +20,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.4
+        with:
+            java-version: '17'
+            
+      - name: Build Eureka Naming Server Image
+        working-directory: ./03_naming-server
+        run: mvn spring-boot:build-image
