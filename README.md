@@ -15,9 +15,9 @@
 
 Before running the project, make sure you have the following dependencies installed:
 
-- `Java 17`. If not, you can download the `Java 17` [here](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
-- `Apache Maven 3.9.2`. If not, you can download the `Apache Maven 3.9.2` [here](https://maven.apache.org/docs/3.9.2/release-notes.html).
-- `Docker`. If not, you can download the `Docker` [here](https://www.docker.com/).
+- `Java 17`
+- `Apache Maven 3.9.2`
+- `Docker`
 
 ## How to run
 
