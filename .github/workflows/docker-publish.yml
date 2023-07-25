@@ -47,7 +47,7 @@ jobs:
         run: docker compose build
         
       - name: Push to Docker Hub
-        run: 
+        run: |
           docker tag ${{secrets.DOCKER_USERNAME}}/discovery-server:0.0.1 ${{secrets.DOCKER_USERNAME}}/discovery-server:${{github.run_id}}
           docker tag ${{secrets.DOCKER_USERNAME}}/api-gateway:0.0.1 ${{secrets.DOCKER_USERNAME}}/api-gateway:${{github.run_id}}
           docker tag ${{secrets.DOCKER_USERNAME}}/cambio-service:latest ${{secrets.DOCKER_USERNAME}}/cambio-service:${{github.run_id}}
